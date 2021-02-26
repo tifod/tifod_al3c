@@ -1,0 +1,185 @@
+{
+    "posts": {
+        "1": {
+            "id": "1",
+            "author": "Jean",
+            "parent_id": "0",
+            "content": "<h1>L'histoire de mon déjeuner</h1>",
+            "date": "1528818369213",
+            "upVotes": 12,
+            "downVotes": 1,
+            "path": [
+                "1"
+            ],
+            "children_id": [
+                "2",
+                "3",
+                "4"
+            ],
+            "confidenceScore": 0.7745459511543398,
+            "bestScoreAfter": 0.8753290626613421
+        },
+        "2": {
+            "id": "2",
+            "author": "Bernard",
+            "parent_id": "1",
+            "content": "Je me trouvais chez moi",
+            "date": "1528818369213",
+            "upVotes": 24,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "2"
+            ],
+            "children_id": [
+                "5"
+            ],
+            "confidenceScore": 0.8753290626613421,
+            "bestScoreAfter": 0.7394949884518779
+        },
+        "3": {
+            "id": "3",
+            "author": "Alfred",
+            "parent_id": "1",
+            "content": "Je rentrais à peine des cours quand soudain",
+            "date": "1528818369213",
+            "upVotes": 18,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "3"
+            ],
+            "children_id": [
+                "6",
+                "7"
+            ],
+            "confidenceScore": 0.8394273817668635,
+            "bestScoreAfter": 0.7175556986096242
+        },
+        "4": {
+            "id": "4",
+            "author": "Jean",
+            "parent_id": "1",
+            "content": "🍴🥗🍝🍏🧀😋",
+            "date": "1528818369213",
+            "upVotes": 3,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "4"
+            ],
+            "children_id": [],
+            "confidenceScore": 0.4325414503689865,
+            "bestScoreAfter": 0.4325414503689865
+        },
+        "5": {
+            "id": "5",
+            "author": "Alfred",
+            "parent_id": "2",
+            "content": "et je mangeais une omelette",
+            "date": "1528818369213",
+            "upVotes": 7,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "2",
+                "5"
+            ],
+            "children_id": [
+                "8",
+                "9",
+                "10"
+            ],
+            "confidenceScore": 0.6604299156391047,
+            "bestScoreAfter": 0.7394949884518779
+        },
+        "6": {
+            "id": "6",
+            "author": "Jean",
+            "parent_id": "3",
+            "content": "un éléphant vint frapper à ma porte !! 🐘 Il voulait manger avec moi !!",
+            "date": "1528818369213",
+            "upVotes": 9,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "3",
+                "6"
+            ],
+            "children_id": [],
+            "confidenceScore": 0.7175556986096242,
+            "bestScoreAfter": 0.7175556986096242
+        },
+        "7": {
+            "id": "7",
+            "author": "Bernard",
+            "parent_id": "3",
+            "content": "un coursier me renversa à vélo, et pour me dédommager, me donna un bon gratuit dans un restaurant sympa, et ainsi, je pu manger gratuitement ce midi là",
+            "date": "1528818369213",
+            "upVotes": 1,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "3",
+                "7"
+            ],
+            "children_id": [],
+            "confidenceScore": 0.16425172002984176,
+            "bestScoreAfter": 0.16425172002984176
+        },
+        "8": {
+            "id": "8",
+            "author": "Jean",
+            "parent_id": "5",
+            "content": "quand le chat se jetta sur mon assiette pour emporter l'omelette et la manger (le goinfre !)",
+            "date": "1528818369213",
+            "upVotes": 10,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "2",
+                "5",
+                "8"
+            ],
+            "children_id": [],
+            "confidenceScore": 0.7394949884518779,
+            "bestScoreAfter": 0.7394949884518779
+        },
+        "9": {
+            "id": "9",
+            "author": "Bernard",
+            "parent_id": "5",
+            "content": "quand je vis un poussin éclore dans un des oeufs que je n'avais pas encore cuisiné",
+            "date": "1528818369213",
+            "upVotes": 0,
+            "downVotes": 1,
+            "path": [
+                "1",
+                "2",
+                "5",
+                "9"
+            ],
+            "children_id": [],
+            "confidenceScore": 0,
+            "bestScoreAfter": 0
+        },
+        "10": {
+            "id": "10",
+            "author": "Alfred",
+            "parent_id": "5",
+            "content": "je fut très fier de moi ce jour là, parce que mon omelette était très réussite",
+            "date": "1520818369213",
+            "upVotes": 0,
+            "downVotes": 5,
+            "path": [
+                "1",
+                "2",
+                "5",
+                "10"
+            ],
+            "children_id": [],
+            "confidenceScore": 0,
+            "bestScoreAfter": 0
+        }
+    }
+}
