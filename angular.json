@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tifod-al3c"
+    }
+  },
+  "defaultProject": "tifod-al3c",
+  "cli": {
+    "analytics": "551f9fb5-a16a-4130-a4fb-fc5f80e41ebb"
+  }
 }
