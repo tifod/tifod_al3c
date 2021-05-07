@@ -1,0 +1,51 @@
+:root {
+    --main-color-deg: 100;
+    --primary-color-light: hsl(var(--main-color-deg), 30%, 60%);
+    --primary-color: hsl(var(--main-color-deg), 100%, 30%);
+    --primary-color-transparent: hsla(var(--main-color-deg), 100%, 30%, .5);
+    --primary-color-dark: hsl(var(--main-color-deg), 100%, 23%);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.material-icons {
+    font-size: 1.5em;
+    vertical-align: bottom;
+}
+
+/* RE-COLORING BOOTSTRAP PRIMARY COLORS */
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color-dark);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color-dark);
+    border-color: currentColor;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    color: white;
+    background-color: var(--primary-color-dark);
+    border-color: currentColor;
+}
+
+.btn-primary:focus, .btn-primary:focus:active, .btn-outline-primary:focus, .btn-outline-primary:focus:active {
+    box-shadow: 0 0 0 0.25rem var(--primary-color-transparent);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-color-dark);
+}

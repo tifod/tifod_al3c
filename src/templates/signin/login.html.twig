@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter
+{% endblock %}
+
+{% block body %}
+	<div class="container col-4 m-auto">
+		<div class="mb-5 text-center">{% include 'components/logo.html.twig' %}</div>
+		<h4 class="mb-3">Se connecter</h4>
+		<form method="POST" class="mb-3">
+            <label class="form-label d-block">
+                Votre email
+                <input type="email" class="form-control" name="email" value="{{ email }}"/>
+            </label>
+
+            <label class="form-label d-block">
+                Votre mot de passe
+                <input type="password" class="form-control" name="password" value="{{ password }}"/>
+            </label>
+
+            <button class="btn btn-primary w-100">Se connecter</button>
+		</form>
+		<p>
+            <a href="/password-reset">Vous avez oublié votre mot de passe ?</a>
+            <br>
+            <a href="/signup">Page d'inscription</i>
+		</p>
+	</div>
+{% endblock %}

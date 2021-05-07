@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<p>{% include 'components/back-link.html.twig' %}</p>
+
+		<h1>Ah ? Heu ...</h1>
+		<p>{{ message|raw }}</p>
+		{% if details %}
+			<code>{{ details }}</code>
+		{% endif %}
+	</div>
+{% endblock %}

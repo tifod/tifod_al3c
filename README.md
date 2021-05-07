@@ -1,27 +1,37 @@
-# TifodAl3c
+# Sample website in PHP
+Because I do a lot of side projects all the time, I created this repo in order to be able to quickly run a php website from anywhere I want with the least amount of software installed.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+Feel free to use it :)
 
-## Development server
+## Basic prerequisites
+- PHP needed (duh)
+- SQLite3 extension activated
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## What's included
+- Slim V4 PHP Framework
+- Twig engine with all the templates located in the `src/templates` folder
+- Bootstrap V5 (CSS + JS)
+- Signin / signup / forgotten password
+- `.env` configuration (https://github.com/symfony/dotenv) (there is a `.default.env` file that is automatically copied to make you a `.env` file when you run the app once)
+- Email utilities (if `app_mode=prod` in the `.env` file, otherwise the emails are displayed on screen)
+- JWT encode / decode functions
+- MariaDB if `.env` is configured accordingly
 
-## Code scaffolding
+## Getting started
+```bash
+php composer-update.php
+```
+(This project is managed with Composer, this script will download a local version of `composer.phar`, install all the dependencies required, and delete the composer file right after it)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once you have installed everything, you can run the project with :
+```bash
+./start.cmd
+```
 
-## Build
+## Troubleshooting
+### "Failed to listen on localhost:80"
+**On Windows**, you can type `netstat -anb | findstr :80` in your command prompt to see the programm using your 80 port, and then `tskill [name of the bothering program]` in order to kill the program bothering you.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**On Linux**, you can type `sudo netstat -nlp | grep :80`, then look for the last number you find at the end of the line and type `kill -9 [number you just found]`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**If that's too complex for you**, you can simply type `php -S localhost:[another number than 80, like 8080 or 8888] -t .` instead of `php -S localhost:80`
