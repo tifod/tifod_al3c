@@ -158,5 +158,7 @@ function il_manque_les_champs($fields)
 
 function array_to_url_encoding($array)
 {
-    return join('&', array_map((fn ($k, $v) => $k . '=' . $v), array_keys($array), $array));
+    return join('&', array_map((function ($k, $v) {
+        return $k . '=' . $v;
+    }), array_keys($array), $array));
 }
