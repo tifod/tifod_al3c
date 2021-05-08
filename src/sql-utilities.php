@@ -11,6 +11,7 @@ class DB
         return [
             // SELECT ALL
             'select_all_users' => 'select * from users',
+            'select_projects_where_id_owner' => 'select * from projects where id_owner = :id_owner',
             // SELECT ONE
             'select_user_from_id_user' => 'select * from users where id_user = :id_user',
             'select_user_from_email' => 'select * from users where email = :email',
