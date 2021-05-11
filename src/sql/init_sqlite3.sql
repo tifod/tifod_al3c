@@ -23,7 +23,7 @@ create table projects (
     foreign key (id_owner) references users(id_user)
 );
 
--- haha, je suis jean et j'aime les conflits. lol.
+-- coucou les gens, cette ligne est un test
 
 -- 
 -- DONNEES EXEMPLE
