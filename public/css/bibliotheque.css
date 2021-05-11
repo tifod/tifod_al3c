@@ -1,0 +1,27 @@
+.carousel-bibli-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+}
+
+.carousel-bibli-item {
+    list-style-type: none;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 450px;
+    margin-left: 1rem;
+}
+
+::-moz-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+::-moz-scrollbar {
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: #3d4852;
+    border-radius: 3px;
+}

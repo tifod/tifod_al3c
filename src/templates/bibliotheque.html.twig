@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliothèque -Tifod
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h3>Bibliothèque</h3>
+		<section class="carousel-bibli">
+			<ul class="carousel-bibli-items">
+				{% for i in 0..5 %}
+					<li class="carousel-bibli-item">
+						<div class="card">
+							<div class="card-body">
+								<h2 class="card-title">My awesome article</h2>
+								<img class="card-img" src="https://placeimg.com/572/322/animals"/>
+								<div class="card-content">
+									<p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough hairball on conveniently placed pants.</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+	</div>
+{% endblock %}

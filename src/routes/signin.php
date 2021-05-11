@@ -46,8 +46,12 @@ $app->get('/', function (Request $request, Response $response, array $args): Res
     } else if (empty($_SESSION['current_user'])) {
         // not logged => /login
         return $response->withRedirect(empty($_GET['redirect']) ? '/login' : $_GET['redirect']);
+    } else if (!empty($_GET['redirect'])) {
+        // s'il y a une redirection demandée, rediriger (on est pas des bêtes :p)
+        return $response->withRedirect($_GET['redirect']);
     } else {
-        return $response->withRedirect(empty($_GET['redirect']) ? '/you-are-connected' : $_GET['redirect']);
+        // sinon, montrer bibliotheque
+        return $response->write($this->view->render('bibliotheque.html.twig'));
     }
     // return $response;
 });

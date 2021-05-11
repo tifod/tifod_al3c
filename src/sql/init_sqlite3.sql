@@ -17,7 +17,8 @@ create table users (
 create table projects (
     id_project integer primary key not null,
     id_owner integer not null,
-    title varchar(200) not null,
+    title_project varchar(200) not null,
+    image_project varchar(200),
     creation_date time not null default current_timestamp,
     foreign key (id_owner) references users(id_user)
 );
