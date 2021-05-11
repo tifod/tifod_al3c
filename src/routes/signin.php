@@ -113,7 +113,7 @@ $app->post('/password-reset', function (Request $request, Response $response): R
     $req = $db->prepareNamedQuery('select_user_from_email');
     $req->execute(['email' => $_POST['email']]);
     if ($req->rowCount() == 0) {
-        alert("Cet email nous est inconnu : $_POST[email])", 3);
+        alert("Cet email nous est inconnu : $_POST[email]", 3);
         return $response->withRedirect($request->getUri()->getPath());
     }
     $user = $req->fetch();
@@ -188,13 +188,6 @@ $app->post('/signup', function (Request $request, Response $response, array $arg
 $app->get('/logout', function (Request $request, Response $response, array $args): Response {
     session_destroy();
     return $response->withRedirect(empty($_GET['redirect']) ? '/' : $_GET['redirect']);
-});
-
-$app->get('/you-are-connected', function (Request $request, Response $response, array $args): Response {
-    return $response->write($this->view->render('homepage.html.twig', [
-        'title' => 'Welcome :)',
-        'body' => "Can't wait to see what you gonna code ᕕ( ՞ ᗜ ՞ )ᕗ",
-    ]));
 });
 
 $app->get('/password-edit', function (Request $request, Response $response, array $args): Response {

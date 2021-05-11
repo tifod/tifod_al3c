@@ -1,11 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ title }}{% endblock %}
-
 {% block body %}
 <div class="container">
     {% if current_user.email %}{% include 'components/connected-as.html.twig' %}{% endif %}
-    <h1>{{ title|raw }}</h1>
-    <p>{{ body|raw }}</p>
+    
+    <a href="/users/{{ current_user.id_user }}" class="btn btn-outline-primary">{{ current_user.username }}</a>
 </div>
 {% endblock %}

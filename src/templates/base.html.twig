@@ -10,7 +10,7 @@
 		<link href="/public/css/styles.css" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="/public/css/bibliotheque.css">
 		<title>
-			{% block title %}{% endblock %}
+			{% block title %}{{ title }}{% endblock %}
 		</title>
 	</head>
 	<body class="py-3 py-md-5">
@@ -20,7 +20,13 @@
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		{% endif %}
-		{% block body %}{% endblock %}
+		{% block body %}
+            <div class="container">
+                {% if current_user.email %}{% include 'components/connected-as.html.twig' %}{% endif %}
+                <h1>{{ title|raw }}</h1>
+                <p>{{ body|raw }}</p>
+            </div>
+        {% endblock %}
 		<script src="/public/js/bootstrap.bundle.min.5.0.0-beta1.js"></script>
 		<script src="/public/js/script.js"></script>
 	</body>
