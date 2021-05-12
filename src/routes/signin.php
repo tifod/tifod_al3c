@@ -46,8 +46,12 @@ $app->get('/', function (Request $request, Response $response, array $args): Res
     } else if (empty($_SESSION['current_user'])) {
         // not logged => /login
         return $response->withRedirect(empty($_GET['redirect']) ? '/login' : $_GET['redirect']);
+    } else if (!empty($_GET['redirect'])) {
+        // s'il y a une redirection demandée, rediriger (on est pas des bêtes :p)
+        return $response->withRedirect($_GET['redirect']);
     } else {
-        return $response->withRedirect(empty($_GET['redirect']) ? '/you-are-connected' : $_GET['redirect']);
+        // sinon, montrer bibliotheque
+        return $response->write($this->view->render('bibliotheque.html.twig'));
     }
     // return $response;
 });
@@ -109,7 +113,7 @@ $app->post('/password-reset', function (Request $request, Response $response): R
     $req = $db->prepareNamedQuery('select_user_from_email');
     $req->execute(['email' => $_POST['email']]);
     if ($req->rowCount() == 0) {
-        alert("Cet email nous est inconnu : $_POST[email])", 3);
+        alert("Cet email nous est inconnu : $_POST[email]", 3);
         return $response->withRedirect($request->getUri()->getPath());
     }
     $user = $req->fetch();
@@ -184,13 +188,6 @@ $app->post('/signup', function (Request $request, Response $response, array $arg
 $app->get('/logout', function (Request $request, Response $response, array $args): Response {
     session_destroy();
     return $response->withRedirect(empty($_GET['redirect']) ? '/' : $_GET['redirect']);
-});
-
-$app->get('/you-are-connected', function (Request $request, Response $response, array $args): Response {
-    return $response->write($this->view->render('homepage.html.twig', [
-        'title' => 'Welcome :)',
-        'body' => "Can't wait to see what you gonna code ᕕ( ՞ ᗜ ՞ )ᕗ",
-    ]));
 });
 
 $app->get('/password-edit', function (Request $request, Response $response, array $args): Response {

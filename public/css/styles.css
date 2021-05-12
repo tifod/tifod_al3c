@@ -1,5 +1,5 @@
 :root {
-    --main-color-deg: 100;
+    --main-color-deg: 210;
     --primary-color-light: hsl(var(--main-color-deg), 30%, 60%);
     --primary-color: hsl(var(--main-color-deg), 100%, 30%);
     --primary-color-transparent: hsla(var(--main-color-deg), 100%, 30%, .5);
