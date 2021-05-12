@@ -5,11 +5,25 @@
 {% block body %}
     <div class="container">
         {% include 'components/connected-as.html.twig' %}
-        
-        <h1>Liste des projets de {{ user.username }}</h1>
+        <h5> Nombre de projet : {{nbProjects.countProjects}}  &ensp;  Participé :  {{nbProjectsParticipants.countParticipated}} &ensp; Brouillons : {{nbBrouillons.countBrouillons}} &ensp;  Abonnement : {{nbAbonnements.countAbonnements}} &ensp; Abonnées : {{nbAbonnees.countAbonnees}}  </h5>
+        <HR ALIGN=CENTER WIDTH="1000">
+        <br/>
+          <h1>Liste des projets de {{ user.username }}</h1>
         {% for project in projects %}
             <h5>{{ project.title }}</h5>
             <p>Créé {{ project.creation_date|timeago }}</p>
+        {% endfor %}
+        <br/>
+        <h1>Projets auxquels vous avez participé {{participant.id_project}}</h1>
+        {% for participant in participants%}
+            <h5>{{participant.title}}</h5>
+            <p>Propriétaire du projet : {{participant.username}}</p>
+        {% endfor %}
+
+        <h1>Brouillons : </h1>
+        {% for brouillon in brouillons%}
+            <h5>{{brouillon.title}}</h5>
+            <p>Propriétaire du projet : {{brouillon.username}}</p>
         {% endfor %}
     </div>
 {% endblock %}

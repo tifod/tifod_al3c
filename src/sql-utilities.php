@@ -12,6 +12,11 @@ class DB
             // SELECT ALL
             'select_all_users' => 'select * from users',
             'select_projects_where_id_owner' => 'select * from projects where id_owner = :id_owner',
+            'select_projects_where_id_participant' => 'select p.title, u.username from participants pa, projects p, users u  where u.id_user = p.id_owner and  pa.id_project = p.id_project and  id_participant = :id_participant',
+            'select_projectsBrouillon_where_id_user' => 'select p.title, u.username from brouillons b, projects p, users u  where u.id_user = p.id_owner and  b.id_project = p.id_project and  b.id_user = :id_user',
+
+            //'select * from participants where id_participant = :id_participant',
+
             // SELECT ONE
             'select_user_from_id_user' => 'select * from users where id_user = :id_user',
             'select_user_from_email' => 'select * from users where email = :email',
@@ -22,7 +27,14 @@ class DB
             'insert_user' => 'insert into users(email, user_role) values (:email, :user_role)',
             // DELETE
             '' => '',
-        ][$key];
+            //COUNT 
+            'count_nbProject_by_id_participants' => 'select count(distinct id_project) countParticipated from participants where id_participant = :id_participant',
+            'count_nbProject_by_id_owners' => 'select count(distinct id_project) countProjects from projects where id_owner= :id_owner',
+            'count_nbAbonnee_by_id_user' => 'select count(*) countAbonnees from abonnements where id_user = :id_user',
+            'count_nbAbonnement_by_id_abonnee' => 'select count(*) countAbonnements from abonnements where id_abonnee = :id_abonnee',
+            'count_nbBrouillon_by_id_user' => 'select count(*) countBrouillons from brouillons where id_user = :id_user',
+
+            ][$key];
     }
 
     private $_db_type;
